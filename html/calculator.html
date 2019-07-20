@@ -1,0 +1,186 @@
+<!--
+ LEGAL COPYRIGHT NOTICE
+ 
+ Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ 
+ This software is proprietary to and embodies the confidential technology of
+ Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ software and media is authorised only pursuant to a valid written license
+ from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ Blackburn Victoria 3130, Australia.
+-->
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="app:/core/script/html/calculator.js"></script>
+	<script type="text/javascript" src="app:/core/script/html/common.js"></script>
+	<link rel="stylesheet" type="text/css" href="app:/core/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="app:/core/css/html/calculator.css" />
+</head>
+
+<body class="business-metrics">
+
+<div id="header">
+	<div class="business-metrics">Business Metrics Calculator</div>
+	<div class="ppc">PPC Calculator</div>
+</div>
+<div id="menu">
+	<a class="business-metrics">Business Metrics Calculator</a>
+	<a class="ppc">PPC Calculator</a>
+</div>
+<div id="main">
+	<div class="business-metrics">
+		<div class="input">
+			<p>
+				<label for=""><span class="pre">Number of</span> Impressions: </label>
+				<input type="text" id="business-metrics-impressions" />
+			</p>
+			<p>
+				<label for=""><span class="pre">Number of</span> Clicks: </label>
+				<input type="text" id="business-metrics-clicks" />
+			</p>
+			<p>
+				<label for=""><span class="pre">Number of</span> Sales: </label>
+				<input type="text" id="business-metrics-sales" />
+			</p>
+			<p>
+				<label for=""><span class="pre">Value of</span> Total Revenue: </label>
+				<input type="text" id="business-metrics-revenue" class="money" />
+			</p>
+		</div>
+		<div class="output">
+			<p>
+				<span class="label">Click-Through Rate:<span class="post">Clicks / Impressions</span></span>
+				<span class="result" id="business-metrics-click-through"></span>
+			</p>
+			<p>
+				<span class="label">Offer Conversion Rate:<span class="post">Sales / Clicks</span></span>
+				<span class="result" id="business-metrics-offer-conversion"></span>
+			</p>
+			<p>
+				<span class="label">Website Conversion Rate:<span class="post">Sales / Impressions</span></span>
+				<span class="result" id="business-metrics-website-conversion"></span>
+			</p>
+			<p>
+				<span class="label">Value per Click:<span class="post">Total Revenue / Clicks</span></span>
+				<span class="result" id="business-metrics-offer-value"></span>
+			</p>
+			<p>
+				<span class="label">Value per Visitor:<span class="post">Total Revenue / Impressions</span></span>
+				<span class="result" id="business-metrics-website-value"></span>
+			</p>
+		</div>
+	</div>
+	<div class="ppc">
+		<div class="q1">
+			<div class="input">
+				<h2 class="question">What's the maximum that I can bid and still be profitable?</h2>
+				<p>
+					<label for="" class="nopre">Profit per Sale: </label>
+					<input type="text" id="ppc-profit" class="money" />
+				</p>
+				<p>
+					<label for=""><span class="pre">Conservative</span> Conversion Rate: </label>
+					<input type="text" id="ppc-conversion-rate" class="percentage" />
+				</p>
+			</div>
+			<div class="output">
+				<p>
+					<span class="label">Maximum Cost per Click:<span class="post">Profit per Sale &times; Conversion Rate / 100</span></span>
+					<span class="result" id="ppc-max-cpc"></span>
+				</p>
+			</div>
+		</div>
+		<div class="q2">
+			<div class="input">
+				<h2 class="question">What's the minimum profit per sale that I need to make to still be profitable?</h2>
+				<p>
+					<label for=""><span class="pre">Conservative</span> Conversion Rate: </label>
+					<input type="text" id="ppc-q2-conversion-rate" class="percentage" />
+				</p>
+				<p class="keyword">
+					<label for="">Keyword:</label>
+					<input type="text" id="ppc-q2-keyword" />
+					<button>Fetch Data</button>
+					<span class="error"></span>
+				</p>
+				<p class="loading">
+					<label for="">Please wait...</label>
+					<span class="progress"></span>
+					<button>Cancel</button>
+				</p>
+			</div>
+			<div class="output">
+				<p>
+					<span class="label">Bid Cost per Click:</span>
+					<span class="result" id="ppc-q2-cpc-average">$0.75</span>
+					<span class="post">
+						<span class="result" id="ppc-q2-cpc-low">$0.50</span> -
+						<span class="result" id="ppc-q2-cpc-high">$1.10</span>
+					</span>
+				</p>
+				<p>
+					<span class="label">Minimum Profit per Sale:<span class="post">Bid Cost per Click / Conversion Rate</span></span>
+					<span class="result" id="ppc-q2-profit-average">$150.00</span>
+					<span class="post">
+						<span class="result" id="ppc-q2-profit-low">$100.00</span> -
+						<span class="result" id="ppc-q2-profit-high">$220.00</span>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="q3">
+			<div class="input">
+				<h2 class="question">What's the minimum conversion rate that I need to achieve to be profitable?</h2>
+				<p>
+					<label for="" class="nopre">Profit per Sale: </label>
+					<input type="text" id="ppc-q3-profit" class="money" />
+				</p>
+				<p class="keyword">
+					<label for="">Keyword:</label>
+					<input type="text" id="ppc-q3-keyword" />
+					<button>Fetch Data</button>
+					<span class="error"></span>
+				</p>
+				<p class="loading">
+					<label for="">Please wait...</label>
+					<span class="progress"></span>
+					<button>Cancel</button>
+				</p>
+			</div>
+			<div class="output">
+				<p>
+					<span class="label">Bid Cost per Click:</span>
+					<span class="result" id="ppc-q3-cpc-average">$0.75</span>
+					<span class="post">
+						<span class="result" id="ppc-q3-cpc-low">$0.50</span> -
+						<span class="result" id="ppc-q3-cpc-high">$1.10</span>
+					</span>
+				</p>
+				<p>
+					<span class="label">Minimum Conversion Rate:<span class="post">Bid Cost per Click / Profit per Sale</span></span>
+					<span class="result" id="ppc-q3-conversion-rate-average">1.58%</span>
+					<span class="post">
+						<span class="result" id="ppc-q3-conversion-rate-low">1.05%</span> -
+						<span class="result" id="ppc-q3-conversion-rate-high">2.32%</span>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="bottom">
+			<h1>Other Questions</h1>
+			<a href="" class="ppc-q1"><h2 class="question">What's the maximum that I can bid and still be profitable?</h2></a>
+			<a href="" class="ppc-q2"><h2 class="question">What's the minimum profit per sale that I need to make to still be profitable?</h2></a>
+			<a href="" class="ppc-q3"><h2 class="question">What's the minimum conversion rate that I need to achieve to be profitable?</h2></a>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<button class="close">Close</button>
+</div>
+
+</body>
+
+</html>

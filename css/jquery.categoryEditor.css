@@ -1,0 +1,76 @@
+div.category-editor h6 {
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 12px;
+}
+div.category-editor div.add {
+	background-color: #CFDCE2;
+	position: relative;
+	-webkit-border-radius: 0;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-bottom: 1px solid #063C45;
+	padding: 4px 58px 4px 4px;
+}
+div.category-editor div.add button { position: absolute; right: 4px; top: 16px; width: 50px; height: 22px; }
+div.category-editor div.add input { width: 100%; margin-right: 50px; height: 22px; }
+
+div.category-editor div.list {
+	padding: 5px 2px;
+	min-height: 100px;
+	max-height: 200px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+div.category-editor div.extra {
+	padding: 4px;
+	background-color: #CFDCE2;
+	-webkit-border-radius: 0;
+	-webkit-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-top: 1px solid #063C45;
+}
+div.category-editor ul {
+	list-style: none;
+	margin: 0; padding: 0;
+}
+div.category-editor ul.new ul ul,
+div.category-editor ul.existing ul {
+	margin-left: 10px;
+	color: black;
+}
+div.category-editor ul.new {
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px dotted #063C45;
+}
+div.category-editor ul li {
+	position: relative;
+}
+div.category-editor ul button.categorize,
+div.category-editor ul button.delete {
+	position: absolute;
+	right: 0; top: 0;
+	font-size: 90%;
+	height: 22px;
+}
+div.category-editor ul span.category {
+	display: block;
+	margin-top: 5px;
+	font-size: 90%;
+    color: #137182;
+	text-transform: lowercase;
+}
+div.category-editor ul span.category em {
+	color: #063C45;
+	font-style: normal;
+}
+
+.category-editor-category-dialog {
+	display: none;
+	width: 500px;
+	height: 300px;
+}
+.category-editor-category-dialog > div.dialog-footer {
+	width: 470px;
+}

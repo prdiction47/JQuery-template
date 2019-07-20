@@ -1,0 +1,20 @@
+body {
+	padding-top: 3px; padding-bottom: 0;
+}
+table {
+	font-size: 100%;
+}
+table td {
+	padding: 0;
+}
+
+a.bug {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	margin-right: 5px;
+	background: url(app:/core/img/icon/48/bug_off.png) no-repeat left top;
+}
+a.bug:hover {
+	background-image: url(app:/core/img/icon/48/bug_on.png);
+}

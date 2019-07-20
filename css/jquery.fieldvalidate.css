@@ -1,0 +1,4 @@
+input.error, textarea.error {
+	border-color: #bb0000;
+	background: #ffcccc;
+}

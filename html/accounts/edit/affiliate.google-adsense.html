@@ -1,0 +1,17 @@
+<!--
+include_css app:/core/css/accounts/common.css
+include_css app:/core/css/accounts/edit.css
+-->
+<div class="accountEdit">
+	<p tooltip="{{account_name}}">
+		<label for="account-edit-google-adsense-title">Account Name: </label>
+		<input id="account-edit-google-adsense-title" type="text" name="title" />
+	</p>
+	<p tooltip="{{google_adsense_pubid}}">
+		<label for="account-edit-google-adsense-publisher-id">Publisher ID: </label>
+		<input id="account-edit-google-adsense-publisher-id" type="text" name="publisherId" message="pub-XXXXXXXXXXXXXXXX"/>
+	</p>
+	<p class="signup">
+		To find your publisher id <a href="https://www.google.com/adsense/" class="external externalVisible">click here</a>.
+	</p>
+</div>

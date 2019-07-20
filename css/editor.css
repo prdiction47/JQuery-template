@@ -1,0 +1,158 @@
+/**
+ *  LEGAL COPYRIGHT NOTICE
+ *
+ *  Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.
+ *
+ *  This software is proprietary to and embodies the confidential technology of
+ *  Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ *  software and media is authorised only pursuant to a valid written license
+ *  from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ *  be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ *  Blackburn Victoria 3130, Australia.
+ */
+
+/**
+ * <div class="originalClasses">
+ *   <div class="ui-editor-border"/>
+ *   <div class="ui-editor-content">
+ *     editable content
+ *   </div>
+ * </div>
+ */
+
+.ui-editor {
+}
+.ui-editor-border {
+	position: absolute;
+	border: 1px dashed #bbb;
+	padding: 3px;
+	top: -5px; bottom: -5px; left: -5px; right: -5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	z-index: 100;
+}
+.ui-editor-border div.ui-editor-description {
+	display: none;
+	color: #bbb;
+}
+.ui-editor.show-hints .ui-editor-border div.ui-editor-description {
+	display: block;
+}
+.ui-editor:hover .ui-editor-border {
+	border-color: black;
+}
+.ui-editor.selected .ui-editor-border {
+	border-color: red;
+}
+.ui-editor-content {
+	position: relative;
+	z-index: 101;
+	outline: 0;
+	-webkit-user-modify: read-write;
+}
+
+.ui-editor-content a {
+	color: blue;
+	text-decoration: underline;
+	cursor: text;
+}
+
+/**
+ * Image resizer
+ */
+.ui-resize-image {
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0;
+	opacity: 0.5;
+}
+.ui-resize-image img {
+	width: 100%;
+	height: 100%;
+}
+.ui-resize {
+	border: 1px solid black;
+}
+.ui-resize-handle {
+	position: absolute;
+	z-index: 1001;
+	border: 1px solid black;
+	background: white;
+	width: 5px; height: 5px;
+}
+.ui-resize-handle:hover {
+	background: black;
+}
+.ui-resize-n { top: -3px; left: 50%; margin-left: -3px; }
+.ui-resize-s { bottom: -3px; left: 50%; margin-left: -3px; }
+.ui-resize-e { right: -3px; top: 50%; margin-top: -3px; }
+.ui-resize-w { left: -3px; top: 50%; margin-top: -3px; }
+.ui-resize-ne { top: -3px; right: -3px; }
+.ui-resize-nw { top: -3px; left: -3px; }
+.ui-resize-se { bottom: -3px; right: -3px; }
+.ui-resize-sw { bottom: -3px; left: -3px; }
+
+.ui-position {
+	display: block;
+	margin: 1px;
+	width: 60px;
+	z-index: 99999;
+}
+
+.ui-position button {
+	float: left;
+	width: 20px; height: 20px;
+	padding: 0; margin: 0;
+	border: none;
+	overflow: hidden;
+}
+.ui-position button span {
+	background-color: white;
+	display: block;
+	width: 20px; height: 20px;
+	overflow: hidden;
+	padding-left: 20px;
+	background-image: url(app:/core/img/icon/20/wysiwyg.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	cursor: pointer;
+}
+
+.ui-editor-link-edit {
+	position: absolute;
+	padding: 3px;
+	border: 1px solid #777;
+	background: #CFDCE2;
+	z-index: 10000;
+	-webkit-border-radius: 4px;
+}
+
+.ui-editor-link-edit a, .linkeditor a {
+	cursor: pointer;
+	color: blue !important;
+	text-decoration: underline;
+}
+.ui-editor-link-goto {
+	background: transparent url(app:/core/img/external_link_arrow_off.png) no-repeat scroll right center;
+	padding-right:12px;
+}
+
+.ui-editor-link-goto:hover {
+	background: transparent url(app:/core/img/external_link_arrow_on.png) no-repeat scroll right center;
+}
+
+.spellcheck {
+	background: url(app:/core/img/spellcheck_underline.gif) bottom repeat-x;
+}
+
+button.ui-position-left span { background-position: 0px -260px; }
+button.ui-position-left span:hover { background-position: 0px -280px; }
+button.ui-position-left.active span { background-position: 0px -300px; }
+
+button.ui-position-none span { background-position: -20px -260px; }
+button.ui-position-none span:hover { background-position: -20px -280px; }
+button.ui-position-none.active span { background-position: -20px -300px; }
+
+button.ui-position-right span { background-position: -40px -260px; }
+button.ui-position-right span:hover { background-position: -40px -280px; }
+button.ui-position-right.active span { background-position: -40px -300px; }
+

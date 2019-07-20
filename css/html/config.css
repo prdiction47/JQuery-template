@@ -1,0 +1,209 @@
+body {
+	margin: 0; padding: 0;
+	background: white;
+	background: #137182;
+}
+#header {
+	position: absolute;
+	top: 0; left: 0; right: 0; height: 80px;
+	background: url(app:/core/img/market-samurai-logo-beta.png) no-repeat left top,
+		url(app:/core/img/background.png) repeat-x left top;
+	background-color: #137182;
+}
+#menu {
+	position: absolute;
+	left: 0; width: 190px;
+	top: 80px; bottom: 28px;
+	padding: 5px;
+	/*
+	border-right: 2px solid #063C45;
+	background: #CFDCE2;
+	*/
+}
+#menu button {
+	display: block;
+	width: 190px;
+	border: none;
+	/*
+	border: 2px solid #063C45;
+	border-right: 2px;
+	*/
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	padding: 2px;
+	margin-bottom: 2px;
+	background: #063C45;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: left;
+	/*
+	margin-right: -2px;
+	*/
+}
+#menu button:hover {
+	color: #F3842F;
+	cursor: pointer;
+}
+body.general #menu button.general, body.general #menu button.general:hover,
+body.tips #menu button.tips, body.tips #menu button.tips:hover,
+body.appearance #menu button.appearance, body.appearance #menu button.appearance:hover,
+body.proxies #menu button.proxies, body.proxies #menu button.proxies:hover,
+body.accounts #menu button.accounts, body.accounts #menu button.accounts:hover,
+body.semrush #menu button.semrush, body.semrush #menu button.semrush:hover,
+body.update #menu button.update, body.update #menu button.update:hover,
+body.debug #menu button.debug, body.debug #menu button.debug:hover,
+body.dev #menu button.dev, body.dev #menu button.dev:hover {
+	border-right: 1px solid white;
+	color: #063C45;
+	background-color: white;
+}
+/*#menu button.update { display: none; }*/
+#menu button span.icon {
+	display: block;
+	background: url(app:/icon/samurai_32.png) no-repeat 6px 5px;
+	padding: 5px 5px 5px 45px;
+	height: 32px;
+	line-height: 32px;
+}
+
+#menu button.general span.icon { background-image: url(app:/core/img/icon/32/settings_off.png); }
+#menu button.general:hover span.icon { background-image: url(app:/core/img/icon/32/settings_hover.png); }
+body.general #menu button.general span.icon { background-image: url(app:/core/img/icon/32/settings_on.png); }
+
+#menu button.tips span.icon { background-image: url(app:/core/img/icon/32/settings_off.png); }
+#menu button.tips:hover span.icon { background-image: url(app:/core/img/icon/32/settings_hover.png); }
+body.tips #menu button.tips span.icon { background-image: url(app:/core/img/icon/32/settings_on.png); }
+
+#menu button.appearance span.icon { background-image: url(app:/core/img/icon/32/appearance_off.png); }
+#menu button.appearance:hover span.icon { background-image: url(app:/core/img/icon/32/appearance_hover.png); }
+body.appearance #menu button.appearance span.icon { background-image: url(app:/core/img/icon/32/appearance_on.png); }
+
+#menu button.proxies span.icon { background-image: url(app:/core/img/icon/32/proxy_off.png); }
+#menu button.proxies:hover span.icon { background-image: url(app:/core/img/icon/32/proxy_hover.png); }
+body.proxies #menu button.proxies span.icon { background-image: url(app:/core/img/icon/32/proxy_on.png); }
+
+#menu button.accounts span.icon { background-image: url(app:/core/img/icon/32/accounts_off.png); }
+#menu button.accounts:hover span.icon { background-image: url(app:/core/img/icon/32/accounts_hover.png); }
+body.accounts #menu button.accounts span.icon { background-image: url(app:/core/img/icon/32/accounts_on.png); }
+
+#menu button.semrush span.icon { background-image: url(app:/core/img/icon/32/semrush_off.png); }
+#menu button.semrush:hover span.icon { background-image: url(app:/core/img/icon/32/semrush_hover.png); }
+body.semrush #menu button.semrush span.icon { background-image: url(app:/core/img/icon/32/semrush_on.png); }
+
+#menu button.update span.icon { background-image: url(app:/core/img/icon/32/update_off.png); }
+#menu button.update:hover span.icon { background-image: url(app:/core/img/icon/32/update_hover.png); }
+body.update #menu button.update span.icon { background-image: url(app:/core/img/icon/32/update_on.png); }
+
+#menu button.debug span.icon { background-image: url(app:/core/img/icon/32/bug_off.png); }
+#menu button.debug:hover span.icon { background-image: url(app:/core/img/icon/32/bug_hover.png); }
+body.debug #menu button.debug span.icon { background-image: url(app:/core/img/icon/32/bug_on.png); }
+
+/*
+#menu button.dev span.icon { background-image: url(app:/core/img/icon/32/bug_off.png); }
+#menu button.dev:hover span.icon { background-image: url(app:/core/img/icon/32/bug_hover.png); }
+body.dev #menu button.dev span.icon { background-image: url(app:/core/img/icon/32/bug_on.png); }
+*/
+
+#config {
+	position: absolute;
+	left: 195px; right: 5px;
+	top: 5px; bottom: 34px;
+	padding: 5px 15px;
+	overflow: auto;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	background: white;
+}
+#config>div {
+	display: none;
+}
+
+body.general #config div.general { display: block; }
+body.tips #config div.tips { display: block; }
+body.appearance #config div.appearance { display: block; }
+body.proxies #config div.proxies { display: block; }
+body.accounts #config div.accounts { display: block; }
+body.semrush #config div.semrush { display: block; }
+body.update #config div.update { display: block; }
+body.debug #config div.debug { display: block; }
+body.dev #config div.dev { display: block; }
+
+#footer {
+	position: absolute;
+	bottom: 5px; left: 195px; height: 28px; right: 5px;
+	border-top: 1px solid #063C45;
+	background: #CFDCE2;
+	text-align: right;
+	padding: 0 15px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+}
+
+table {
+	font-size: 100%;
+}
+
+span.warning { color: red; }
+#debug_path { color: #090; word-break: all; }
+
+
+#proxies-add {
+	display: none;
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 15px 30px;
+	-webkit-border-radius: 4px;
+	font-size: 120%;
+	line-height: 20px;
+}
+#proxies-add h3 {
+	font-size: 120%;
+	margin: 0; padding: 0;
+	font-weight: bold;
+}
+#proxies-add p {
+	margin: 0; padding: 0;
+}
+
+
+/* .paid-only { display: none; } */
+.semrush-description {
+   margin: 3px;
+   padding: 1px 5px 1px 7px;
+   -webkit-border-radius: 4px;
+   background: #CFDCE2;
+}
+
+/* Progress indicator duplication */
+#progress {
+   display: none;
+   border: 1px solid white;
+   background: #CFDCE2;
+   padding: 15px 30px;
+   -webkit-border-radius: 4px;
+   font-size: 120%;
+   line-height: 20px;
+   text-align: center;
+}
+#progress .progressBar img {
+   vertical-align: bottom;
+}
+
+#indeterminate-loading {
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 15px 30px;
+	-webkit-border-radius: 4px;
+	font-size: 120%;
+	line-height: 20px;
+}
+#indeterminate-loading h3 {
+	font-size: 120%;
+	margin: 0; padding: 0;
+	font-weight: bold;
+}
+#indeterminate-loading p {
+	margin: 0; padding: 0;
+}
+

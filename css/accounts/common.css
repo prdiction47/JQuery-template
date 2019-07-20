@@ -1,0 +1,36 @@
+.accountEdit p {
+	display: block;
+	text-align: left;
+	margin: 5px 15px;
+	padding: 0;
+}
+.accountEdit label:not(.after) {
+	clear: left;
+	display: inline-block;
+	width: 85px;
+	text-align: right;
+	margin-right: 5px;
+}
+.accountEdit input, .accountEdit select {
+	margin-left: 22%;
+	margin-right: 5px;
+}
+.accountEdit label + input, .accountEdit label + select {
+	margin-left: 0;
+	margin-right: 5px;
+	width: 65%;
+	text-align: left;
+}
+.accountEdit label + input.short {
+	width: 50%;
+}
+
+
+/*
+.accountEdit .advanced {
+	border: 1px solid #137182;
+	-webkit-border-radius: 4px;
+	padding: 5px 15px;
+	margin: 10px 10% 0 10%;
+}
+*/

@@ -1,0 +1,115 @@
+.box {
+	position: absolute;
+	border: 1px solid #063C45;
+	-webkit-border-radius: 4px;
+	padding: 0 15px;
+	margin: 6px;
+	overflow: auto;
+}
+.box.header {
+	border: none;
+	padding: 0;
+}
+.box.title {
+	font-weight: bold;
+	background: #063c45;
+	padding: 6px 6px;
+	color: white;
+	-webkit-border-radius: 4px;
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+}
+.box.title a, .box.title a:hover, .box.title:visited {
+	color: white;
+	text-decoration: underline;
+	font-weight: normal;
+}
+.box.footer {
+	clear: both;
+	text-align: right;
+	background: #CFDCE2;
+	padding: 2px 6px;
+	-webkit-border-radius: 4px;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-top-left-radius: 0;
+}
+.box.footer span {
+	line-height: 28px;
+}
+.box.aftertitle {
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-top-left-radius: 0;
+	border-top: none;
+	margin-top: 0;
+}
+.box.beforefooter {
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+}
+.box.title + .box,
+.box + .box.footer {
+	border-top-width: 0;
+	margin-top: 0;
+}
+.box.highlight {
+	background-color: #CFDCE2;
+}
+
+.box.nopadding { padding: 0; }
+.box.nomargin { margin: 0; }
+.box.noborder { border: none; }
+.box.none {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+/* tabbar */
+.box.top.tabbar {
+	border: none;
+	margin: 0 0 -1px 0;
+	padding-top: 5px;
+	z-index: 1;
+}
+.box.top.tabbar > ul {
+	float: left;
+	display: table-row;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	white-space: nowrap;
+}
+.box.top.tabbar > ul.right {
+	float: right;
+}
+.box.top.tabbar > ul > li {
+	display: inline;
+}
+.box.top.tabbar > ul > li > a, .box.top.tabbar > ul > li > a:visited {
+	display: block;
+	float: left;
+	padding: 4px 16px 2px 16px;
+	color: #063c45;
+	background: #cfdce2;
+	border: 1px solid #063c45;
+	-webkit-border-radius: 4px;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	margin-right: 2px;
+	text-decoration: none;
+}
+.box.top.tabbar > ul > li.current > a,
+.box.top.tabbar > ul > li.current > a:hover,
+.box.top.tabbar > ul > li.current > a:visited {
+	color: #063c45 !important;
+	background: white;
+	border-bottom-color: white;
+	cursor: default;
+}
+
+.box.top.tabbar > ul > li.disabled {
+	background: gray;
+}
+
+.left { float: left; }
+.right { float: right; }

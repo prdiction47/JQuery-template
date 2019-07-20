@@ -1,0 +1,58 @@
+<!--
+include_css: app:/core/css/accounts/common.css
+include_css: app:/core/css/accounts/wizard.css
+-->
+<div class="step1">
+	<p>
+		Please enter your blog's URL:<br />
+		<input type="text" name="url" />
+	</p>
+</div>
+
+<div class="step2" style="display:none">
+	<p>
+		Please add (or change) your API URL: <br />
+		<label>API URL:</label> <input type="text" name="apiurl" />
+	</p>
+	<p><input type="checkbox" name="advanced" /> Advanced Settings</p>
+	<div class="advanced" style="display:none">
+		<p><input type="checkbox" name="publish_as_bool" /> Use Boolean for Publish</p>
+		<p><label>API Key:</label> <input type="text" name="apikey" /> (normally ignored)</p>
+	</div>
+</div>
+
+<div class="step3" style="display:none">
+	<p>Please add your username and password for this blog:</p>
+	<p>
+		<label>Username:</label> <input type="text" name="username" />
+		<label>Password:</label> <input type="text" name="password" />
+	</p>
+</div>
+
+<div class="step4" style="display:none">
+	<p>
+		You have successfully logged into your account.<br />
+		Please confirm the information below and continue.
+	</p>
+	<p>
+		<label>Title:</label> <input type="text" name="title" />
+		<label>URL:</label> <input type="text" name="url" />
+		<label>Username:</label> <input type="text" name="username" />
+		<label>API URL:</label> <input type="text" name="apiurl" />
+	</p>
+	<p><input type="checkbox" name="advanced" /> Advanced Settings</p>
+	<div class="advanced" style="display:none">
+		<p><input type="checkbox" name="publish_as_bool" /> Use Boolean for Publish</p>
+		<p><label>API Key:</label> <input type="text" name="apikey" /> (normally ignored)</p>
+	</div>
+</div>
+
+<div class="step5" style="display:none">
+	<p>Account Added.</p>
+</div>
+
+<div class="error" style="display:none">
+	<h2>Login Error</h2>
+	<p>Please check your username and password for errors and try again.</p>
+	<p class="additional"></p>
+</div>

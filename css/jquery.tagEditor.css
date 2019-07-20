@@ -1,0 +1,30 @@
+.tag-editor div.tag {
+	float: left;
+	display: inline-block;
+	border: 1px solid #999;
+	-webkit-border-radius: 10px;
+	padding: 1px 8px;
+	margin-right: 4px;
+	background-color: #CFDCE2;
+
+	outline: 0;
+	cursor: default;
+}
+
+.tag-editor div.tag:hover {
+	border: 1px solid #668;
+	background-color: #9CA9D1;
+}
+
+.tag-editor div.tag.selected {
+	border: 1px solid #668;
+	background-color: #668;
+	color: #FFF;
+}
+
+.tag-editor div.new {
+	outline: none;
+	display: inline-block;
+	padding: 2px 8px 1px 8px;
+	margin-right: 4px;
+}

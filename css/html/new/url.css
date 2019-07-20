@@ -1,0 +1,35 @@
+a.block {
+	display: block;
+	float: left;
+	width: 45%;
+	margin: 10px 5% 10px 0;
+}
+a.block>div {
+	min-height: 70px;
+	padding-left: 70px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+a.block h2 {
+	padding: 0;
+	margin: 0;
+}
+a.block p {
+	padding: 0.5em 0;
+	margin: 0;
+}
+
+a.keyword-research>div { background-image: url(app:/core/img/icon/64/keyword_off.png); }
+a.keyword-research:hover>div { background-image: url(app:/core/img/icon/64/keyword_hover.png); }
+a.seo-competition>div { background-image: url(app:/core/img/icon/64/content_off.png); }
+a.seo-competition:hover>div { background-image: url(app:/core/img/icon/64/content_hover.png); }
+a.find-content>div { background-image: url(app:/core/img/icon/64/content_off.png); }
+a.find-content:hover>div { background-image: url(app:/core/img/icon/64/content_hover.png); }
+a.promotion>div { background-image: url(app:/core/img/icon/64/promo_off.png); }
+a.promotion:hover>div { background-image: url(app:/core/img/icon/64/promo_hover.png); }
+a.publish-content>div { background-image: url(app:/core/img/icon/64/publish_off.png); }
+a.publish-content:hover>div { background-image: url(app:/core/img/icon/64/publish_hover.png); }
+a.monetization>div { background-image: url(app:/core/img/icon/64/monetisation_off.png); }
+a.monetization:hover>div { background-image: url(app:/core/img/icon/64/monetisation_hover.png); }
+a.adwords>div { background-image: url(app:/core/img/icon/64/adwords_off.png); }
+a.adwords:hover>div { background-image: url(app:/core/img/icon/64/adwords_hover.png); }

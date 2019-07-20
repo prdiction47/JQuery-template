@@ -1,0 +1,17 @@
+.link-shortener p {
+	margin-left: 0;
+}
+
+.link-shortener label {
+	display: inline-block;
+	width: 7.5em;
+	text-align: right;
+}
+
+.link-shortener .pretty-links {
+	display: none;
+	margin-left: 7.5em;
+}
+.link-shortener.wordpress .pretty-links {
+	display: block;
+}

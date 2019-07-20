@@ -1,0 +1,77 @@
+/** LEGAL COPYRIGHT NOTICE
+ *
+ * Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ *
+ * This software is proprietary to and embodies the confidential technology of
+ * Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ * software and media is authorised only pursuant to a valid written license
+ * from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ * be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ * Blackburn Victoria 3130, Australia.
+ */
+
+/**
+ * Progress indicator.
+ */
+
+#progress {
+	display: none;
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 15px 30px;
+	-webkit-border-radius: 4px;
+	font-size: 120%;
+	line-height: 20px;
+	text-align: center;
+}
+#progress .progressBar img, #queue-progress .progressBar560 img {
+	vertical-align: bottom;
+}
+
+#queue-progress {
+	display: none;
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 15px 15px;
+	-webkit-border-radius: 4px;
+	/*font-size: 120%;*/
+	line-height: 20px;
+	text-align: center;
+	width: 600px;
+}
+#queue-activity {
+	display: block;
+	width: 100%;
+	height: 280px;
+	border: 1px inset #063C45;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: left;
+	background: white;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+#queue-activity li {
+	display: block;
+	padding: 2px 10px 2px 40px;
+	color: #999;
+	border-bottom: 1px solid #CFDCE2;
+	white-space: nowrap;
+	background: white; /* url(app:/core/img/progress/activity.png) no-repeat 4px 7px; */
+}
+#queue-activity li.active {
+	line-height: 20px;
+	background: url(app:/core/img/progress/activity.gif) no-repeat 4px 7px;
+	color: #063C45;
+}
+#queue-time-taken {
+	margin-top: 5px;
+	float: left;
+}
+#queue-time-remaining {
+	margin-top: 5px;
+	float: right;
+}
+

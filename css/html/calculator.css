@@ -1,0 +1,261 @@
+/** LEGAL COPYRIGHT NOTICE
+ *
+ * Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ *
+ * This software is proprietary to and embodies the confidential technology of
+ * Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ * software and media is authorised only pursuant to a valid written license
+ * from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ * be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ * Blackburn Victoria 3130, Australia.
+ */
+body {
+	font-family: arial;
+	font-size: 0.76em;
+	background: #137182 url(app:/core/img/background.png) repeat-x left top;
+}
+#header {
+	position: absolute;
+	left: 55px; right: 5px;
+	top: 5px; height: 36px;
+	line-height: 36px;
+	padding: 0 15px;
+	color: white;
+	background-color: #063C45;
+	font-size: 16px;
+	-webkit-border-radius: 0;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+}
+#menu {
+	position: absolute;
+	left: 9px; width: 46px;
+	top: 90px;
+}
+#menu a {
+	display: block;
+	width: 46px; height: 46px;
+	line-height: 46px;
+	overflow: hidden;
+	padding-left: 46px;
+	background-color: #063C45;
+	-webkit-border-radius: 0;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	margin-bottom: 4px;
+	background-position: 7px 7px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+body.business-metrics #menu a.business-metrics,
+body.ppc #menu a.ppc {
+	background-color: white;
+}
+#menu a.business-metrics { background-image: url(app:/core/img/icon/32/calcbm_off.png); }
+#menu a.business-metrics:hover { background-image: url(app:/core/img/icon/32/calcbm_hover.png); }
+body.business-metrics #menu a.business-metrics { background-image: url(app:/core/img/icon/32/calcbm_on.png); }
+#menu a.ppc { background-image: url(app:/core/img/icon/32/calcppc_off.png); }
+#menu a.ppc:hover { background-image: url(app:/core/img/icon/32/calcppc_hover.png); }
+body.ppc #menu a.ppc { background-image: url(app:/core/img/icon/32/calcppc_on.png); }
+
+#main {
+	position: absolute;
+	left: 55px; right: 5px;
+	top: 41px; bottom: 42px;
+	background-color: white;
+}
+
+div.business-metrics { display: none; }
+div.ppc { display: none; }
+body.business-metrics div.business-metrics { display: block; }
+body.ppc div.ppc { display: block; }
+
+body.ppc div.q1 { display: block; }
+body.ppc div.q2, body.ppc div.q3 { display: none; }
+body.ppc a.ppc-q1 { display: none; }
+body.ppc a.ppc-q2, body.ppc a.ppc-q3 { display: inline; }
+
+body.ppc-q2 div.ppc div.q2 { display: block; }
+body.ppc-q2 div.ppc div.q1, body.ppc-q2 div.ppc div.q3 { display: none; }
+body.ppc-q2 a.ppc-q2 { display: none; }
+body.ppc-q2 a.ppc-q1, body.ppc-q2 a.ppc-q3 { display: inline; }
+
+body.ppc-q3 div.ppc div.q3 { display: block; }
+body.ppc-q3 div.ppc div.q1, body.ppc-q3 div.ppc div.q2 { display: none; }
+body.ppc-q3 a.ppc-q3 { display: none; }
+body.ppc-q3 a.ppc-q1, body.ppc-q3 a.ppc-q2 { display: inline; }
+
+.input {
+	border-top: 1px solid #CFDCE2;
+	padding: 0 15px;
+	background-color: #CFDCE2;
+	border-bottom: 1px solid #137182;
+}
+
+.input h1, .output h1, .bottom h1 {
+	color: #063C45;
+	font-size: 100%;
+	font-weight: bold;
+}
+.input h2, .output h2, .bottom h2 {
+	color: #137182;
+	font-size: 100%;
+	font-weight: normal;
+}
+h2.question {
+	padding-left: 24px;
+	background: url(app:/core/img/icon/16/question_off.png) no-repeat left top;
+	min-height: 16px;
+}
+a:hover h2.question {
+	color: #F3842F;
+	background-image: url(app:/core/img/icon/16/question_hover.png);
+}
+
+.input p, .output p {
+	clear: both;
+}
+.input p label, .output p span.label {
+	float: left;
+	display: block;
+	color: #063C45;
+	font-size: 16px;
+	text-align: right;
+	height: 30px;
+	width: 210px;
+}
+.input p label .pre, .output p .label .post {
+	display: block;
+	color: #137182;
+	font-size: 10px;
+	margin-right: 0;
+}
+.output p .post {
+	margin-right: 10px;
+	display: block;
+	font-size: 10px;
+}
+.input p input {
+	margin-left: 5px;
+	height: 30px;
+	width: 110px;
+	background: white;
+	padding: 5px 10px;
+	line-height: 20px;
+	outline: 0;
+	font-size: 16px;
+	border: 1px solid #063C45;
+	-webkit-border-radius: 4px;
+	text-align: right;
+	color: #333;
+}
+.input p label.nopre {
+	line-height: 35px;
+}
+.input p input.money { background: white url(app:/core/img/calculator/dollars.png) no-repeat 6px 6px; }
+.input p input.percentage { background: white url(app:/core/img/calculator/percentage.png) no-repeat 6px 6px; }
+
+.input p.keyword label, .input p.loading label {
+	text-align: left;
+	font-size: 12px;
+	height: 14px;
+}
+.input p.loading .progress {
+	clear: left;
+	display: inline-block;
+	line-height: 24px;
+	vertical-align: bottom;
+	width: 240px;
+	height: 24px;
+	background: url(app:/core/img/progress/swirlyloading_dark.gif) no-repeat center;
+}
+
+.input p.keyword input {
+	display: inline-block;
+	margin-left: 0;
+	width: 240px;
+	height: 24px;
+	line-height: 16px;
+	font-size: 12px;
+	text-align: left;
+	padding: 4px;
+}
+.input p.keyword button, .input p.loading button {
+	position: relative;
+	top: 1px;
+	width: 84px;
+	height: 26px;
+	line-height: 16px;
+	font-size: 12px;
+	padding: 4px;
+}
+.input p.keyword span.error {
+	display: block;
+	position: relative;
+	top: 4px;
+	font-size: 90%;
+	color: red;
+}
+
+.input p.loading { display: none; }
+.ppc.loading .input p.keyword { display: none; }
+.ppc.loading .input p.loading { display: block; }
+
+.output {
+	padding: 0 20px 0 15px;
+}
+.output p {
+	padding: 2px 0;
+	text-align: right;
+}
+/* absolute labels so that if the number gets really big it just goes
+   under/over the label rather than wrapping and messing everything up */
+.output p .label { position: absolute; }
+.output p .result {
+	margin-left: 5px;
+	width: 110px;
+	padding: 5px 10px;
+	font-size: 16px;
+	text-align: right;
+	overflow: hidden;
+	height: 16px;
+}
+.output p .post .result {
+	margin-left: 0;
+	width: auto;
+	padding: 0;
+	font-size: inherit;
+	height: 10px;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0; right: 0;
+	padding: 0 20px 0 15px;
+}
+
+.soon {
+	font-size: 14px;
+	text-align: center;
+	line-height: 380px;
+}
+
+#footer {
+	position: absolute;
+	left: 55px; right: 5px;
+	bottom: 5px; height: 26px;
+	color: #063C45;
+	padding: 5px 15px;
+	background-color: #CFDCE2;
+	border-top: 1px solid #137182;
+	-webkit-border-radius: 0;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	text-align: right;
+}
+body:after {
+	position: absolute;
+	left: 4px; top: 2px;
+	content: url(app:/core/img/market-samurai-logo-small-beta.png);
+}

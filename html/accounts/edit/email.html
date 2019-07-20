@@ -1,0 +1,18 @@
+<!--
+include_css app:/core/css/accounts/common.css
+include_css app:/core/css/accounts/edit.css
+-->
+<div class="accountEdit">
+	<p><label for="account-edit-email-title">Title: </label><input id="account-edit-email-title" type="text" name="title" /></p>
+	<p><label for="account-edit-email-server">SMTP Server: </label><input id="account-edit-email-server" type="text" name="server"></p>
+	<p><label for="account-edit-email-port">Port: </label><input maxlength=5 id="account-edit-email-port" type="number" name="port"></p>
+	<p><label for="account-edit-email-encryption">Security: </label>
+		<select id="account-edit-email-encryption" name="encryption">
+			<option value="none" selected="selected">None</option>
+			<option value="ssl">SSL Encryption</option>
+		</select>
+	</p>
+	<p><label for="account-edit-email-address">Address: </label><input id="account-edit-email-address" type="email" name="address" /></p>
+	<p><label for="account-edit-email-username">Username: </label><input id="account-edit-email-username" type="text" name="username" /></p>
+	<p><label for="account-edit-email-password">Password: </label><input id="account-edit-email-password" type="password" name="password" /></p>
+</div>

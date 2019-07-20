@@ -1,0 +1,143 @@
+.editor-buttons {
+	padding: 0;
+	/*
+	height: 22px;
+	*/
+	overflow: hidden;
+}
+
+.editor-buttons button {
+	margin: 1px;
+}
+
+.editor-buttons div.break {
+	width: 10px;
+	height: 20px;
+	float: left;
+}
+
+.editor-buttons button {
+	float: left;
+	width: 20px; height: 20px;
+	padding: 0; margin: 1px;
+	border: none;
+	overflow: hidden;
+}
+.editor-buttons button span {
+	display: block;
+	width: 20px; height: 20px;
+	overflow: hidden;
+	padding-left: 20px;
+	background-image: url(app:/core/img/icon/20/wysiwyg.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	cursor: pointer;
+}
+.editor-buttons .color-picker-current-color {
+	float: left;
+	width: 0; height: 20px;
+	padding: 0; margin: 0; border: none;
+	overflow: hidden;
+}
+.editor-buttons select {
+	float: left;
+	display: block;
+	padding: 0; margin: 1px;
+}
+
+.editor-buttons button.undo span { background-position: 0 -20px; }
+.editor-buttons button.undo.disabled span:hover { background-position: 0 0; }
+.editor-buttons button.undo span:hover { background-position: 0 -40px; }
+.editor-buttons button.undo.active span { background-position: 0 -60px; }
+.editor-buttons button.redo span { background-position: -20px -20px; }
+.editor-buttons button.redo.disabled span:hover { background-position: -20px 0; }
+.editor-buttons button.redo span:hover { background-position: -20px -40px; }
+.editor-buttons button.redo.active span { background-position: -20px -60px; }
+.editor-buttons button.close span,
+.editor-buttons button.close.disabled span:hover { background-position: -60px -20px; }
+.editor-buttons button.close span:hover { background-position: -60px -40px; }
+.editor-buttons button.close.active span { background-position: -60px -60px; }
+
+.editor-buttons button.bold span,
+.editor-buttons button.bold.disabled span:hover { background-position: 0 -100px; }
+.editor-buttons button.bold span:hover { background-position: 0 -120px; }
+.editor-buttons button.bold.active span { background-position: 0 -140px; }
+.editor-buttons button.italic span,
+.editor-buttons button.italic.disabled span:hover { background-position: -20px -100px; }
+.editor-buttons button.italic span:hover { background-position: -20px -120px; }
+.editor-buttons button.italic.active span { background-position: -20px -140px; }
+.editor-buttons button.underline span,
+.editor-buttons button.underline.disabled span:hover { background-position: -40px -100px; }
+.editor-buttons button.underline span:hover { background-position: -40px -120px; }
+.editor-buttons button.underline.active span { background-position: -40px -140px; }
+.editor-buttons button.strikeThrough span,
+.editor-buttons button.strikeThrough.disabled span:hover { background-position: -60px -100px; }
+.editor-buttons button.strikeThrough span:hover { background-position: -60px -120px; }
+.editor-buttons button.strikeThrough.active span { background-position: -60px -140px; }
+.editor-buttons button.insertOrderedList span,
+.editor-buttons button.insertOrderedList.disabled span:hover { background-position: -80px -100px; }
+.editor-buttons button.insertOrderedList span:hover { background-position: -80px -120px; }
+.editor-buttons button.insertOrderedList.active span { background-position: -80px -140px; }
+.editor-buttons button.insertUnorderedList span,
+.editor-buttons button.insertUnorderedList.disabled span:hover { background-position: -100px -100px; }
+.editor-buttons button.insertUnorderedList span:hover { background-position: -100px -120px; }
+.editor-buttons button.insertUnorderedList.active span { background-position: -100px -140px; }
+.editor-buttons button.leftAlign span,
+.editor-buttons button.leftAlign.disabled span:hover { background-position: -120px -100px; }
+.editor-buttons button.leftAlign span:hover { background-position: -120px -120px; }
+.editor-buttons button.leftAlign.active span { background-position: -120px -140px; }
+.editor-buttons button.centerAlign span,
+.editor-buttons button.centerAlign.disabled span:hover { background-position: -140px -100px; }
+.editor-buttons button.centerAlign span:hover { background-position: -140px -120px; }
+.editor-buttons button.centerAlign.active span { background-position: -140px -140px; }
+.editor-buttons button.rightAlign span,
+.editor-buttons button.rightAlign.disabled span:hover { background-position: -160px -100px; }
+.editor-buttons button.rightAlign span:hover { background-position: -160px -120px; }
+.editor-buttons button.rightAlign.active span { background-position: -160px -140px; }
+.editor-buttons button.increaseFontSize span,
+.editor-buttons button.increaseFontSize.disabled span:hover { background-position: -180px -100px; }
+.editor-buttons button.increaseFontSize span:hover { background-position: -180px -120px; }
+.editor-buttons button.increaseFontSize.active span { background-position: -180px -140px; }
+.editor-buttons button.decreaseFontSize span,
+.editor-buttons button.decreaseFontSize.disabled span:hover { background-position: -200px -100px; }
+.editor-buttons button.decreaseFontSize span:hover { background-position: -200px -120px; }
+.editor-buttons button.decreaseFontSize.active span { background-position: -200px -140px; }
+
+.editor-buttons button.foreColor span,
+.editor-buttons button.foreColor.disabled span:hover { background-position: -220px -100px; }
+.editor-buttons button.foreColor span:hover { background-position: -220px -120px; }
+.editor-buttons button.foreColor.active span { background-position: -220px -140px; }
+.editor-buttons button.hiliteColor span,
+.editor-buttons button.hiliteColor.disabled span:hover { background-position: -240px -100px; }
+.editor-buttons button.hiliteColor span:hover { background-position: -240px -120px; }
+.editor-buttons button.hiliteColor.active span { background-position: -240px -140px; }
+
+.editor-buttons button.char span,
+.editor-buttons button.char.disabled span:hover { background-position: 0 -180px; }
+.editor-buttons button.char span:hover { background-position: 0 -200px; }
+.editor-buttons button.char.active span { background-position: 0 -220px; }
+.editor-buttons button.link span,
+.editor-buttons button.link.disabled span:hover { background-position: -20px -180px; }
+.editor-buttons button.link span:hover { background-position: -20px -200px; }
+.editor-buttons button.link.active span { background-position: -20px -220px; }
+.editor-buttons button.unlink span,
+.editor-buttons button.unlink.disabled span:hover { background-position: -40px -180px; }
+.editor-buttons button.unlink span:hover { background-position: -40px -200px; }
+.editor-buttons button.unlink.active span { background-position: -40px -220px; }
+.editor-buttons button.image span,
+.editor-buttons button.image.disabled span:hover { background-position: -60px -180px; }
+.editor-buttons button.image span:hover { background-position: -60px -200px; }
+.editor-buttons button.image.active span { background-position: -60px -220px; }
+.editor-buttons button.video span,
+.editor-buttons button.video.disabled span:hover { background-position: -80px -180px; }
+.editor-buttons button.video span:hover { background-position: -80px -200px; }
+.editor-buttons button.video.active span { background-position: -80px -220px; }
+.editor-buttons button.remove-format span,
+.editor-buttons button.remove-format.disabled span:hover { background-position: -100px -180px; }
+.editor-buttons button.remove-format span:hover { background-position: -100px -200px; }
+.editor-buttons button.remove-format.active span { background-position: -100px -220px; }
+
+.editor-buttons button.spellcheck span,
+.editor-buttons button.spellcheck.disabled span:hover { background-position: -120px -180px; }
+.editor-buttons button.spellcheck span:hover { background-position: -120px -200px; }
+.editor-buttons button.spellcheck.active span { background-position: -120px -220px; }

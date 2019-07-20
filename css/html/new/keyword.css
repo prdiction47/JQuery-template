@@ -1,0 +1,21 @@
+a.block {
+	display: block;
+	float: left;
+	width: 45%;
+	margin: 10px 5% 10px 0;
+	cursor: pointer;
+}
+a.block>div {
+	min-height: 70px;
+	padding-left: 70px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+a.block h2 {
+	padding: 0;
+	margin: 0;
+}
+a.block p {
+	padding: 0.5em 0;
+	margin: 0;
+}

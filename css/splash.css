@@ -1,0 +1,141 @@
+/** LEGAL COPYRIGHT NOTICE
+ *
+ * Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ *
+ * This software is proprietary to and embodies the confidential technology of
+ * Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ * software and media is authorised only pursuant to a valid written license
+ * from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ * be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ * Blackburn Victoria 3130, Australia.
+ */
+
+#splash {
+	display: none;
+	width: 650px;
+	height: 500px;
+	border: 1px solid #137182;
+	background: white;
+}
+#splash .header {
+	background: url(app:/core/img/market-samurai-logo-beta.png) no-repeat left top,
+		url(app:/core/img/background.png) repeat-x left top;
+	background-color: #137182;
+	height: 80px;
+	margin-bottom: 7px;
+}
+#splash .new, #splash .open {
+	float: left;
+	padding: 5px 20px;
+	height: 368px;
+}
+#splash .new {
+	width: 210px;
+	border-right: 1px solid #137182;
+}
+#splash .open {
+	width: 350px;
+}
+#splash .status {
+	position: absolute;
+	bottom: 0; left: 1; height: 28px; width: 650px;
+	background: #CFDCE2;
+	border-top: 1px solid #137182;
+}
+#splash .status p {
+	padding: 0 10px; margin: 0;
+	line-height: 28px;
+	text-align: right;
+}
+#splash .paid {
+	display: none;
+}
+body[title="paid"] #splash .paid {
+	display: block;
+	position: absolute;
+	right: -22px;
+	top: -24px;
+	height: 89px;
+	width: 89px;
+	background: url(app:/core/img/paid_starburst.png) no-repeat right top;
+}
+
+#splash h1 {
+	font-size: 120%;
+	font-weight: bold;
+	text-align: left;
+	color: #333;
+}
+#splash ul {
+	list-style: none;
+	margin: 0; padding: 0;
+}
+#splash button {
+	width: 100%;
+	border: none;
+	text-align: left;
+	padding: 0 5px 0 26px;
+	line-height: 26px;
+	height: 26px;
+	overflow: hidden;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	border: 1px solid white;
+	-webkit-border-radius: 4px;
+	font-weight: normal;
+}
+#splash button:hover {
+	border: 1px solid #CFDCE2;
+	background-color: #CFDCE2;
+}
+
+/* New project */
+#splash button#project_new {
+	background-image: url(app:/icon/doc_16.png);
+}
+
+#splash li.open-file {
+	text-align: left;
+	height: 26px;
+}
+
+/* Recent project (particular file) */
+#splash button.project_file {
+	width: 90%;
+	background-image: url(app:/icon/doc_16.png);
+}
+#splash button.project_file.dsam {
+	background-image: url(app:/icon/dsamdoc_16.png);
+}
+#splash button.project_file.asam {
+	background-image: url(app:/icon/asamdoc_16.png);
+}
+
+/* Cause the file row to appear highlighted when any part of the li is hovered,
+ * i.e. so that when we're hovering over the 'delete' button for a file, the file
+ * still has a hover effect. 	 */
+#splash li.open-file:hover button.project_file {
+	border: 1px solid #CFDCE2;
+	background-color: #CFDCE2;
+}
+
+/* Cause the delete button to appear only on hover-over. This is more specific than
+ * the button.delete_project:hover below, so it should override `display: none' there.
+ * Stupid CSS. 	*/
+#splash li.open-file:hover button.delete_project {
+	display: inline;
+}
+
+/* Delete recent project */
+#splash button.delete_project, #splash button.delete_project:hover {
+	display: none;
+	width: 0px;
+	border: none;
+	background-color: transparent;
+}
+
+#splash button.delete_project { background-image: url(app:/core/img/icon/16/close_off.png); }
+#splash button.delete_project:hover { background-image: url(app:/core/img/icon/16/close_on.png); }
+
+#splash button#project_open { background-image: url(app:/core/img/icon/16/open.png); }

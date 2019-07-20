@@ -1,0 +1,66 @@
+<div class="imageUpload">
+	<form onsubmit="return false;">
+	<div class="save-locally">
+		<div class="method">
+			<input type="radio" id="save-locally" class="image-method save-locally" name="image-method" value="save-locally" />
+		</div>
+		<div class="methodInfo">
+			<label for="save-locally">
+				Save images to disk
+			</label>
+			<div class="content">
+				<p>
+					(Images will be saved in the directory where you choose when you
+					press continue.)
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="current-account when-current-account">
+		<div class="method">
+			<input type="radio" id="current-account" class="image-method current-account" name="image-method" value="current-account" />
+		</div>
+		<div class="methodInfo">
+			<label for="current-account">
+				Upload images to the selected account
+			</label>
+		</div>
+	</div>
+	<div class="other-account">
+		<div class="method">
+			<input type="radio" id="other-account" class="image-method other-account" name="image-method" value="other-account" />
+		</div>
+		<div class="methodInfo">
+			<label for="other-account">
+				<span class="when-current-account">Upload images to a different account</span>
+				<span class="without-current-account">Upload images to account</span>
+			</label>
+			<div class="content">
+				<div class="image-account format-form"></div>
+				<div class="wordpress-direct">
+					<label>
+						Blog:
+					</label>
+					<span class="wordpress-direct-site"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hotlink-images">
+		<div class="method">
+			<input type="radio" id="hotlink-images" class="image-method hotlink-images" name="image-method" value="hotlink-images" />
+		</div>
+		<div class="methodInfo">
+			<label for="hotlink-images">
+				Remotely link images from current location
+			</label>
+			<div class="content">
+				<p>
+					(Warning: Unless you own the remote location, this
+					is generally a bad idea.)
+				</p>
+			</div>
+		</div>
+	</div>
+	</form>
+</div>

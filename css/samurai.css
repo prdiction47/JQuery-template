@@ -1,0 +1,771 @@
+/** LEGAL COPYRIGHT NOTICE
+ *
+ * Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ *
+ * This software is proprietary to and embodies the confidential technology of
+ * Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ * software and media is authorised only pursuant to a valid written license
+ * from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ * be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ * Blackburn Victoria 3130, Australia.
+ */
+
+/**
+ * Top-level mutually exclusive classes
+ *
+ * TODO(mike): URL resource classes
+ *
+ * - new-keyword
+ * - keyword - when a keyword resource is selected
+ *   + keyword-research
+ *   + seo-competition
+ *   + find-content
+ *   + promotion
+ *
+ * - project - when project settings are shown
+ *   + new-project   - when that project is new
+ *
+ * - splash - some splash page shown
+ *  
+ * - rank-tracker
+ * - monetization
+ * - publish-content
+ * - adwords
+ *
+ * Other classes:
+ * - rss - whether the rss block is shown
+ * - compact - whether the menu is in compact form
+ */
+
+body {
+	font-family: arial;
+	font-size: 0.76em;
+	background: #137182 url(app:/core/img/background.png) repeat-x left top;
+}
+
+#main {
+	position: absolute;
+	left: 200px; right: 5px;
+	top: 32px; bottom: 5px;
+	/*border: 2px solid #063C45;*/
+	-webkit-border-radius: 10px;
+	background: white;
+	z-index: 0;
+}
+
+/**
+ * Side menu.
+ */
+#version {
+	position: absolute;
+	left: 70px; top: 60px; width: 75px;
+	text-align: left;
+	font-size: 10px;
+	color: #85A69E;
+}
+#menublock {
+	-webkit-user-select: none;
+	position: absolute;
+	top: 0; left: 0; width: 195px;
+	background: url(app:/core/img/market-samurai-logo-beta.png) no-repeat left top;
+	padding: 80px 0 0 5px;
+	z-index: 1;
+}
+#menublock button {
+	display: block;
+	width: 190px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 2px;
+	background: #063C45;
+	border: none;
+	padding: 1px 2px;
+	-webkit-border-radius: 4px;
+	text-align: left;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+}
+#menublock button:hover {
+	color: #F3842F;
+}
+#menublock button.current, #menublock button.current:hover {
+	color: #063C45;
+	background: white;
+}
+#menublock button span.icon {
+	display: block;
+	background: url(app:/icon/samurai_32.png) no-repeat 6px 5px;
+	padding: 5px 5px 5px 46px;
+	height: 32px;
+	line-height: 32px;
+	/*border: 1px solid #137182;*/
+}
+
+#menublock button.project {
+	color: #063C45;
+	display: block;
+	margin-bottom: 15px;
+	background: #F3842F;
+	min-height: 32px;
+}
+#menublock button.project:hover {
+	color: white;
+}
+#menublock button.project.current, #menublock button.project.current:hover {
+	color: #F3842F;
+	background: white;
+}
+#menublock button.project span.details {
+	display: block;
+	background-image: none;
+	padding: 0;
+	line-height: 150%;
+	font-weight: normal;
+	text-transform: capitalize;
+}
+#menublock button.project:hover span.details {
+}
+#menublock button.project.current span.details, #menublock button.project.current:hover span.details {
+	color: #377C8B;
+	background: white;
+}
+
+#menublock button.project {
+	display: block;
+	height: auto;
+}
+#menublock button.project span.icon {
+	line-height: 150%;
+	height: auto;
+	min-height: 32px;
+}
+
+#menublock ul {
+	list-style: none;
+	margin: 15px 0 0 0; padding: 0;
+}
+#menublock li a {
+	display: block;
+	cursor: pointer;
+	/*border: 2px solid #063C45;*/
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	background: #063C45;
+	height: 32px; line-height: 32px;
+	padding: 6px 6px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	margin-bottom: 4px;
+	font-size: 12px;
+}
+#menublock a:hover {
+	color: #F3842F;
+}
+#menublock a.current, #menublock a.current:hover {
+	color: #063C45;
+	border-right: white;
+	background: white;
+}
+#menublock li a span.icon {
+	display: block;
+	background: url(app:/icon/samurai_32.png) no-repeat left top;
+	padding-left: 39px;
+}
+
+/**
+ * Resource tabs.
+ */
+#tabblock {
+	-webkit-user-select: none;
+	position: absolute;
+	top: 8px; left: 200px; right: 5px; height: 24px;
+	z-index: 1;
+}
+
+#tabblock div.tabs-left, #tabblock div.tabs-right {
+	display: none;
+}
+
+#tabblock div.tabs-left, #tabblock div.tabs-right, #tabblock div.tabs-dropdown {
+	color: white;
+	position: absolute;
+	background: white;
+	width: 6px;
+	height: 20px;
+	line-height: 17px;
+	font-weight: bold;
+	margin: 0; padding: 2px 5px 0 5px;
+	/*border: 2px solid #063C45;*/
+	width: auto;
+	font-size: 90%;
+	background: #063C45;
+	-webkit-border-radius: 8px;
+	z-index: 1000;
+}
+
+#tabblock div.tabs-left { left: -2px; }
+#tabblock div.tabs-right { right: 18px; }
+#tabblock div.tabs-dropdown { right: 0px; }
+#tabblock div.tabs-left:hover, #tabblock div.tabs-right:hover, #tabblock div.tabs-dropdown:hover {
+	color: #F3842F;
+	cursor: pointer;
+}
+
+#tabblock div.tabs-dropdown-selector {
+	position: absolute;
+	right: 18px;
+	z-index: 99999;
+
+	background: transparent;
+	/*border: 1px solid #999;*/
+}
+
+#tabblock div.tabs-dropdown-selector li {
+	color: white;
+	background: #063C45;
+	font-weight: bold;
+	line-height: 18px;
+	display: block;
+	margin: 0px 1px; padding: 3px 6px 3px 10px;
+	border: 1px solid black;
+
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+}
+
+#tabblock div.tabs-dropdown-selector li:hover {
+    color: #F3842F;
+	border: 1px solid #F3842F;
+	cursor: pointer;
+}
+
+
+
+#tabblock div.fixedtabs {
+	position: absolute;
+	left: 20px; width: 125px; top: 0; height: 24px;
+	overflow: hidden;
+}
+#tabblock div.tabs {
+	position: absolute;
+	/*left: 125px;*/
+	left: 20px;
+	right: 40px; top: 0; height: 24px;
+	overflow: hidden;
+}
+#tabblock div.tabs ul, #tabblock div.fixedtabs ul {
+	position: absolute;
+	overflow: hidden;
+	list-style: none;
+	margin: 0; padding: 0;
+	top: 0;
+	margin-right: -999999px;
+}
+#tabblock div.tabs li, #tabblock div.fixedtabs li  {
+	float: left;
+	color: white;
+	background: #063C45;
+	font-weight: bold;
+	height: 20px;
+	line-height: 18px;
+	display: block;
+	margin: 0 1px; padding: 4px 6px 0 10px;
+	/*border: 2px solid #063C45;*/
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+}
+
+  
+
+#tabblock div.tabs li:hover, #tabblock div.fixedtabs li:hover {
+	color: #F3842F;
+	cursor: pointer;
+}
+#tabblock div.tabs li span.close, #tabblock div.tabs-dropdown-selector li span.close {
+	display: inline-block;
+	margin-left: 4px;
+	width: 10px;
+	height: 10px;
+	background: url(app:/core/img/tab-item-close.png) no-repeat left top;
+}
+
+#tabblock div.tabs li.current span.close {
+	background: url(app:/core/img/tab-item-close.png) no-repeat left -10px;
+}
+#tabblock div.tabs li span.close:hover, #tabblock div.tabs-dropdown-selector li span.close:hover {
+	background: url(app:/core/img/tab-item-close.png) no-repeat left -20px;
+}
+#tabblock div.fixedtabs li.rank-tracker {
+	color: #063C45;
+	background: #F3842F;
+	padding-right: 10px;
+}
+#tabblock div.fixedtabs li.rank-tracker:hover {
+	color: white;
+}
+#tabblock div.fixedtabs li.rank-tracker.current,
+#tabblock div.fixedtabs li.rank-tracker.current:hover {
+	color: #F3842F;
+	background: white;
+}
+
+/**
+ * Information block, containing miscellany such as current keyword,
+ * project settings.
+ */
+#infoblock {
+	display: none;
+	position: absolute;
+	height: 40px;
+	top: 0; left: 0; right: 0;
+	line-height: 26px;
+	border: 1px solid #137182;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	background: #CFDCE2;
+	border-width: 0 0 1px 0;
+}
+#infoblock h1 {
+	margin: 10px 0;
+	padding: 0;
+	font-size: 150%;
+	font-weight: bold;
+	border-bottom: 1px solid #137182;
+	color: #137182;
+}
+#seed, #project, #keyword, #url {
+	padding: 0 15px;
+	margin: 0;
+}
+#project p.warning {
+	padding-left: 0;
+	margin: -5px 0 0 105px;
+	width: 480px;
+}
+#seed {
+	display: none;
+	color: #137182;
+	font-size: 150%;
+	line-height: 40px;
+}
+#seed .resource { color: #333; }
+#seed button {
+	float: right;
+	font-size: 66%;
+	margin-top: 8px;
+}
+
+/**
+ * Track rank textbox
+ */
+/*
+#tracker {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  line-height: 40px;
+}
+#tracker .url { margin-left: 15px; }
+#tracker .url input { width: 200px; }
+*/
+#project, #keyword, #url { display: none; }
+
+/**
+ * iframe block
+ */
+#appblock {
+	position: absolute;
+	top: 0px; bottom: 0; left: 0; right: 0;
+}
+iframe {
+	border: none;
+	background: transparent;
+	width: 100%;
+	height: 100%;
+}
+
+/* Don't display partner co-branding on Rank Tracker */
+body.rank-tracker #appblock {
+	background-image: none;
+}
+
+/**
+ * Compact menu 
+ */
+
+/* Button to compact/uncompact */
+#menublock-compact {
+	position: absolute;
+	display: block;
+	height: 16px; width: 16px;
+	background: #063C45 url(app:/core/img/icon/16/showhide.png) no-repeat 0 0;
+	color: white;
+	left: 184px;
+	bottom: 16px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	z-index: 1;
+}
+body.compact #menublock-compact {
+	background-position: -16px 0;
+	left: 41px;
+}
+#menublock-compact:hover { background-position: 0 -16px; }
+body.compact #menublock-compact:hover { background-position: -16px -16px; }
+
+/*body.compact { margin: 32px 5px 5px 60px; }*/
+body.compact #version { display: none; }
+body.compact #menublock {
+	width: 52px;
+	background: url(app:/core/img/market-samurai-logo-small-beta.png) no-repeat left top;
+}
+body.compact #menublock button { width: 48px; overflow: hidden; }
+body.compact #menublock button span.icon {
+	width: 32px; line-height: 32px; height: 32px; padding: 5px; overflow: hidden;
+	white-space: nowrap;
+	text-indent: 50px;
+}
+body.compact #menublock button.project span.icon {
+	height: 32px;
+}
+body.compact #menublock button.project span.details { display: none; }
+body.compact #menublock li { width: 52px; overflow: hidden; }
+body.compact #menublock li a span.icon { padding-left: 52px; }
+body.compact #main { left: 57px; right: 5px top: 32px; bottom: 5px }
+body.compact #tabblock { top: 8px; left: 57px; right: 5px; height: 24px; }
+
+/**
+ * RSS block
+ */
+#rssblock {
+	display: none;
+	position: absolute;
+	bottom: 2px; left: 2px; right: 2px; height: 58px;
+	bottom: 0; left: 0; right: 0;
+	padding: 0;
+	border: 1px solid #137182;
+	border-width: 1px 0 0 0;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	background: #CFDCE2;
+}
+body.rss #rssblock { display: block; }
+body.rss #appblock { bottom: 58px; }
+
+#rssblock-close {
+	display: none;
+	position: absolute;
+	width: 16px; height: 16px;
+	background: url(app:/core/img/icon/16/close_off.png) no-repeat 0 0;
+	right: 4px; top: 4px;
+	z-index: 1;
+}
+#rssblock-close:hover {
+	background-image: url(app:/core/img/icon/16/close_on.png);
+}
+body.rss #rssblock-close { display: block; }
+
+.selectfix {
+	position: absolute;
+	height: 1px; top: -999999px;
+}
+
+/**
+ * Menu items.
+ */
+
+#menublock button.project span.icon { background-image: url(app:/core/img/icon/32/project_off.png); }
+#menublock button.project:hover span.icon { background-image: url(app:/core/img/icon/32/project_hover.png); }
+#menublock button.project.current span.icon { background-image: url(app:/core/img/icon/32/project_on.png); }
+
+#menublock button.keyword span.icon { background-image: url(app:/core/img/icon/32/keyword_off.png); }
+#menublock button.keyword:hover span.icon { background-image: url(app:/core/img/icon/32/keyword_hover.png); }
+#menublock button.keyword.current span.icon { background-image: url(app:/core/img/icon/32/keyword_on.png); }
+
+#menublock button.url span.icon { background-image: url(app:/core/img/icon/32/url_off.png); }
+#menublock button.url:hover span.icon { background-image: url(app:/core/img/icon/32/url_hover.png); }
+#menublock button.url.current span.icon { background-image: url(app:/core/img/icon/32/url_on.png); }
+#menublock button.url { display: none !important; } /* TMP: remove till working */
+
+/**
+ * Splash page of some sort shown.
+ */
+body.splash #main { display: none; }
+body.splash #version { display: none; }
+body.splash #menublock { display: none; }
+body.splash #tabblock { display: none; }
+body.splash #menublock-compact { display: none; }
+
+
+#project_file_container { display: none; }
+
+/**
+ * Configuration page.
+ */
+
+#config {
+	display: none;
+	width: 650px;
+	height: 500px;
+}
+
+#resource {
+	display: none;
+}
+
+/*********************/
+
+#indeterminate-loading {
+	display: none;
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 15px 30px;
+	-webkit-border-radius: 4px;
+	font-size: 120%;
+	line-height: 20px;
+}
+#indeterminate-loading h3 {
+	font-size: 120%;
+	margin: 0; padding: 0;
+	font-weight: bold;
+}
+#indeterminate-loading p {
+	margin: 0; padding: 0;
+}
+
+div.dialog {
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 5px 15px;
+	-webkit-border-radius: 4px;
+	font-size: 100%;
+	line-height: 16px;
+}
+
+/**
+ * Keyword resource selected.
+ */
+body.keyword #infoblock { display: block; }
+body.keyword #seed { display: block; }
+body.keyword #tracker { display: block; }
+body.keyword #appblock { top: 40px; }
+
+body.keyword #tabblock div.tabs li.current,
+body.keyword #tabblock div.tabs li.current:hover,
+body.keyword #tabblock div.fixedtabs li.current,
+body.keyword #tabblock div.fixedtabs li.current:hover {
+	color: #063C45;
+	border-bottom-color: white;
+	background: white;
+}
+body.keyword #tabblock div.tabs-dropdown-selector li.current,
+body.keyword #tabblock div.tabs-dropdown-selector li.current:hover {
+	color: #063C45;
+	background: white;
+}
+
+/**
+ * New keyword.
+ */
+body.new-keyword #resource { display: block; }
+body.new-keyword #infoblock { 
+	display: block;
+	height: 50px;
+}
+body.new-keyword #appblock { top: 50px; }
+
+body.new-keyword #menublock button.keyword { display: block; }
+body.new-keyword #menublock button.project { display: none; }
+body.new-keyword #menublock button.url { display: none; }
+body.new-keyword #menublock ul.modules { display: none; }
+
+body.new-keyword #tabblock div.tabs li.current,
+body.new-keyword #tabblock div.tabs li.current:hover,
+body.new-keyword #tabblock div.fixedtabs li.current,
+body.new-keyword #tabblock div.fixedtabs li.current:hover {
+	color: #063C45;
+	border-bottom-color: white;
+	background: white;
+}
+
+/**
+ * URL resource selected
+ *
+ * TODO(mike): Update this to fit the new system.
+ */
+body.new-url #menublock button.keyword { display: block; }
+body.new-url #menublock button.url { display: none; }
+body.new-url #menublock a.rank-tracker { display: none; }
+body.url #menublock a.rank-tracker { display: block; }
+body.url #menublock button.keyword { display: block; }
+body.url #menublock button.url { display: block; }
+body.url #menublock a.keyword-research { display: block; }
+body.url #menublock a.seo-competition { display: block; }
+body.url.edit #resource, body.new-url.edit #resource{ display: block; }
+
+/**
+ * Project settings
+ */
+
+/* Buttons shown */
+body.project #menublock button.keyword { display: block; }
+body.project #menublock button.url { display: block; }
+body.project #menublock a.rank-tracker { display: block; }
+
+body.project #project { display: block; }
+
+/* Main content */
+body.project #infoblock {
+	display: block;
+	height: 200px;
+}
+body.project #appblock { top: 206px; }
+
+/* Project settings default */
+body.project.new-project #menublock button.project span.details { display: none; }
+body.project.new-project #tabblock { display: none; }
+body.project.new-project #project_file_container { display: block; }
+body.project.new-project #infoblock { height: 235px; }
+body.project.new-project #appblock { top: 239px; }
+
+body.project #project_suggest_change {
+	display: none;
+}
+
+body.project.show-suggest-change #project_language {
+	background-color: red;
+}
+
+body.project.show-suggest-change #project_suggest_change {
+	color: red;
+	font-weight: bold;
+
+	display: inline;
+}
+
+body.project.new-project #menublock button.keyword { display: none; }
+body.project.new-project #menublock button.url { display: none; }
+body.project.new-project #menublock ul.modules { display: none; }
+
+
+/******************************* captchas ********************************/
+#captcha-question { color: white; }
+
+
+
+/** rank tracker **/
+#rank-tracker-datatree-edit-dialog { display: none; }
+#rank-tracker-hint {
+	color: #999;
+	padding-top: 2.5em;
+	padding-left: 4px;
+	padding-bottom: 1em;
+	height: 1em;
+	line-height: 1em;
+	margin-bottom: -4.5em;
+	overflow: hidden;
+}
+
+.small {
+	font-size: 80%;
+	line-height: 80%;
+}
+
+#connection-issues {
+	display: none;
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 10px 15px;
+	-webkit-border-radius: 4px;
+	font-size: 100%;
+	text-decoration: italic;
+	text-align: center;
+}
+
+/** Uncaught exception dialog */
+#uncaught-exception-dialog, #project-save-failure-dialog {
+	position: absolute;
+	display: none;
+	border: 1px solid white;
+	background: #CFDCE2;
+	padding: 10px 15px;
+	-webkit-border-radius: 4px;
+	font-size: 100%;
+	text-decoration: italic;
+	text-align: center;
+	width: 600px;
+	height: 400px;
+	margin-top: 100px;
+	left: 50%;
+	margin-left: -310px;
+}
+
+#project-save-failure-dialog {
+	height: 490px !important;
+	margin-top: 75px;
+}
+
+body.uncaught-exception #uncaught-exception-dialog { display: block; }
+body.project-save-failure #project-save-failure-dialog { display: block; }
+
+
+#uncaught-exception-dialog #uncaught-exception-log, #project-save-failure-dialog #project-save-failure-log {
+	background: white;
+	width: auto;
+	overflow: auto;
+	height: 170px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 1px solid #063c45;
+	-webkit-border-radius: 4px;
+	padding: 5px;
+}
+
+#uncaught-exception-dialog .dialog-header, #project-save-failure-dialog .dialog-header {
+	margin-top: -10px;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+#uncaught-exception-dialog .error-details, #project-save-failure-dialog .error-details {
+	text-align: left;
+}
+
+#uncaught-exception-dialog ol, #project-save-failure-dialog ul, #project-save-failure-dialog ol {
+	float: center;
+	display: inline-block;
+}
+
+#uncaught-exception-dialog ol, #project-save-failure-dialog ol {
+	text-align: left;
+}
+
+body.project-save-failure #main, body.uncaught-exception #main,
+body.project-save-failure .blockUI, body.uncaught-exception .blockUI {
+	display: none;
+}
+
+/** Project save failure overrides uncaught exception dialog **/
+body.project-save-failure #uncaught-exception-dialog {
+	display: none;
+}
+
+body.uncaught-exception #indeterminate-loading, body.project-save-failure #indeterminate-loading {
+	display: block;
+}
+
+/* ---------------------------------------- */
+/*    Google Services Unavailable Dialog    */
+/* ---------------------------------------- */
+#google-services-unavailable-dialog .affected_services {
+	margin-left: 30px;
+}
+
+
+

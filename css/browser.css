@@ -1,0 +1,165 @@
+/** LEGAL COPYRIGHT NOTICE
+ *
+ * Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ *
+ * This software is proprietary to and embodies the confidential technology of
+ * Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ * software and media is authorised only pursuant to a valid written license
+ * from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ * be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ * Blackburn Victoria 3130, Australia.
+ */
+
+/**
+ * Classes for the browser window used in find-content and promotion.
+ */
+
+#browser { display: none; position: absolute; top: 2px; left: 2px; right: 2px; bottom: 2px; }
+#browser div.title {
+	height: 22px; line-height: 22px; text-align: center; color: white; background: #063C45;
+	-webkit-border-radius: 4px;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+}
+#browser div.title a.close {
+	display: block;
+	position: absolute;
+	right: 6px;
+	width: 0;
+	padding-left: 10px;
+	height: 10px;
+	top: 6px;
+	overflow: hidden;
+	background: url(app:/core/img/tab-item-close.png) no-repeat left -10px;
+}
+#browser div.title a.close:hover {
+	background: url(app:/core/img/tab-item-close.png) no-repeat left -20px;
+	cursor: pointer;
+}
+#browser div.browser {
+	position: absolute;
+	top: 23px; bottom: 23px; left: 0; right: 0;
+	border: 1px inset #063C45;
+	margin: 0; padding: 0;
+}
+
+#browser.header div.browser {
+	top: 54px;
+}
+#browser div.header {
+	display: none;
+}
+#browser.header div.header {
+	position: absolute;
+	display: block;
+	height: 29px;
+	left: 0px;
+	right: 0px;
+	top: 24px;
+	background: #CFDCE2;
+	border: 1px solid #063C45;
+	border-bottom: none;
+	overflow: hidden;
+}
+
+#browser.toolbar div.browser {
+	bottom: 54px;
+}
+#browser div.toolbar {
+	display: none;
+}
+#browser.toolbar div.toolbar {
+	position: absolute;
+	display: block;
+	height: 29px;
+	left: 0px;
+	right: 0px;
+	bottom: 24px;
+	background: #CFDCE2;
+	border: 1px solid #063C45;
+	border-top: none;
+}
+
+#browser div.status {
+	position: absolute;
+	height: 22px; line-height: 22px; text-align: center; color: #063C45; background: #CFDCE2;
+	bottom: 0; left: 0; right: 0;
+	-webkit-border-radius: 4px;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+}
+#browser div.status a.url {
+	float: left; 
+	margin-left: 20px; 
+	font-size: 120%; 
+	display:block; 
+	height: 1.5em;
+	overflow: hidden;
+}
+#browser div.status a.url:hover {
+	cursor: pointer;
+}
+
+#browser div.status a.back {
+	display: block;
+	position: absolute;
+	right: 51px;
+	width: 0;
+	padding-left: 10px;
+	height: 10px;
+	top: 6px;
+	overflow: hidden;
+	background: url(app:/core/img/tab-item-back.png) no-repeat left -10px;
+}
+#browser div.status a.back:hover {
+	background: url(app:/core/img/tab-item-back.png) no-repeat left -20px;
+	cursor: pointer;
+}
+
+#browser div.status a.forward {
+	display: block;
+	position: absolute;
+	right: 36px;
+	width: 0;
+	padding-left: 10px;
+	height: 10px;
+	top: 6px;
+	overflow: hidden;
+	background: url(app:/core/img/tab-item-forward.png) no-repeat left -10px;
+}
+#browser div.status a.forward:hover {
+	background: url(app:/core/img/tab-item-forward.png) no-repeat left -20px;
+	cursor: pointer;
+}
+#browser div.status a.refresh {
+	display: block;
+	position: absolute;
+	right: 21px;
+	width: 0;
+	padding-left: 10px;
+	height: 10px;
+	top: 6px;
+	overflow: hidden;
+	background: url(app:/core/img/tab-item-refresh.png) no-repeat left -10px;
+}
+#browser div.status a.refresh:hover {
+	background: url(app:/core/img/tab-item-refresh.png) no-repeat left -20px;
+	cursor: pointer;
+}
+/*
+#browser div.status a.stop {
+	display: block;
+	position: absolute;
+	right: 6px;
+	width: 0;
+	padding-left: 10px;
+	height: 10px;
+	top: 6px;
+	overflow: hidden;
+	background: url(app:/core/img/tab-item-stop.png) no-repeat left -10px;
+}
+#browser div.status a.stop:hover {
+	background: url(app:/core/img/tab-item-stop.png) no-repeat left -20px;
+	cursor: pointer;
+}
+*/

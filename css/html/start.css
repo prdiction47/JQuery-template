@@ -1,0 +1,18 @@
+div.page {
+	float: left;
+	width: 50%;
+}
+div.page a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	padding-left: 70px;
+	padding-right: 10px;
+	background: url(app:/icon/samurai_64.png) no-repeat left top;
+}
+div.page a.keyword-research { background-image: url(app:/core/img/icon/64/keyword-research.png); }
+div.page a.seo-competition { background-image: url(app:/core/img/icon/64/seo-competition.png); }
+div.page a.find-content { background-image: url(app:/core/img/icon/64/find-content.png); }
+div.page a.promotion { background-image: url(app:/core/img/icon/64/promotion.png); }
+div.page a.publish-content { background-image: url(app:/core/img/icon/64/publish-content.png); }
+div.page a.monetization { background-image: url(app:/core/img/icon/64/monetization.png); }

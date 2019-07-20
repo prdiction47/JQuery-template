@@ -1,0 +1,374 @@
+<!--
+ LEGAL COPYRIGHT NOTICE
+ 
+ Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ 
+ This software is proprietary to and embodies the confidential technology of
+ Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ software and media is authorised only pursuant to a valid written license
+ from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ Blackburn Victoria 3130, Australia.
+-->
+<html>
+<head>
+	<title>Configuration</title>
+	<link rel="stylesheet" type="text/css" href="app:/core/css/jquery.fieldvalidate.css" />
+	<link rel="stylesheet" type="text/css" href="app:/core/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="app:/core/css/tooltip.css" />
+	<link rel="stylesheet" type="text/css" href="app:/core/css/html/config.css" />
+	<link rel="stylesheet" type="text/css" href="app:/theme/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="app:/theme/css/config.css" />
+	<script type="text/javascript" src="app:/core/script/jquery/jquery-1.3.2.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/json.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery.selectboxes.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery.progressbar.js"></script>
+	<script type="text/javascript" src="app:/core/script/display.js"></script>
+	<script type="text/javascript" src="app:/core/script/html/common.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery.tooltip.js"></script>
+	<script type="text/javascript" src="app:/core/script/tooltip.js"></script>
+	<script type="text/javascript" src="app:/core/script/html/config.js"></script>
+	<script type="text/javascript" src="app:/core/script/account_editor.js"></script>
+	<script type="text/javascript" src="app:/core/script/progress.js"></script>
+	<script type="text/javascript" src="app:/core/script/block.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery.loadfragment.js"></script>
+	<script type="text/javascript" src="app:/core/script/jquery/jquery.fieldvalidate.js"></script>
+	<script type="text/javascript" src="app:/core/script/debug.js"></script>
+</head>
+
+<body class="general">
+<div>
+	<div id="header"></div>
+
+	<div id="menu">
+		<button name="general" class="general current"><span class="icon">General</span></button>
+		<button name="tips" class="tips"><span class="icon">Tips</span></button>
+		<button name="appearance" class="appearance"><span class="icon">Appearance</span></button>
+		<button name="proxies" class="proxies ranktracker-hidden"><span class="icon">Proxies</span></button>
+		<button name="accounts" class="accounts ranktracker-hidden"><span class="icon">Accounts</span></button>
+		<!--<button name="semrush" class="semrush"><span class="icon">SEMRush</span></button>-->
+		<button name="update" class="update"><span class="icon">Updates</span></button>
+		<button name="debug" class="debug"><span class="icon">Debugging</span></button>
+		<button name="dev" class="dev dev-only"><span class="icon">Developer</span></button>
+	</div>
+
+	<div id="config">
+		<div class="general">
+			<h1>General Settings</h1>
+			<p class="ranktracker-hidden">
+				<label for="connection-throughput">Connection speed:</label>
+				<select name="connection.throughput" id="connection-throughput">
+					<option value="56">56Kbps or less</option>
+					<option value="128">128Kbps</option>
+					<option value="256">256Kbps</option>
+					<option value="512">512Kbps</option>
+					<option value="max">1.5Mbps or more</option>
+				</select>
+				<br/>
+				<input type="checkbox" id="connection-do-not-show-warning" name="connection.do-not-show-warning" value="1">
+				<label for="connection-do-not-show-warning">Do not show
+				warning message when connection issues are detected.</label>
+			</p>
+			<p class="ranktracker-hidden">
+				Try running a <a href="http://www.speakeasy.net/speedtest/" class="external">connection speed test</a>.
+				Select San Francisco, CA as your server.
+			</p>
+
+			<hr class="ranktracker-hidden">
+			<p class="ranktracker-hidden">
+				<input type="checkbox" id="bing-rate-limiting" name="general.bing.limit" value="1">
+				<label for="bing-rate-limiting">Enable experimental SEOC stability mode.</label>
+			</p>
+
+			<hr class="ranktracker-hidden">
+			<p>
+				CSV export format: <input type="text" name="general.csvcomma" size="2" /> (field delimiter, default is comma), <input type="text" name="general.csvquote" size="2" /> (field encapsulation, default is double-quote)
+			</p>
+			<hr/>
+			<div class="paid-only">
+				<p>Click here to deactivate your copy of <span class="app-name"></span>.<br />
+				<em>(Note: Deactivating this copy will allow you to install and activate this copy of <span class="app-name"></span> on another computer.)</em></p>
+				<button id="deactivate">Deactivate</button>
+			</div>
+		</div>
+
+		<div class="tips">
+			<h1>Tips</h1>
+
+			<p>Tips assist you in developing your <span class="app-name"></span> skillset by providing you
+			with tips and hints as you go along.</p>
+
+			<p>
+				<input type="checkbox" name="tips.enable" value="0" id="enable-tips" />
+				<label for="enable-tips">Enable tips</label>
+			</p>
+
+			<p>While less experienced users will likely benefit from having tips enabled,
+			more experienced users sometimes find them annoying.</p>
+
+			<p>Unchecking "Enable tips" will turn them off throughout <span class="app-name"></span>.</p>
+
+			<p>&nbsp;</p>
+
+			<p><button id="reset-hidden-tips">Reset hidden tips</button><br />
+			<span style="text-size: smallest; color: #888">Clicking above will bring up more information about resetting.</span></p>
+		</div>
+
+		<div class="appearance">
+			<h1>Appearance Settings</h1>
+			<table>
+				<tr>
+					<td><input type="checkbox" name="general.colorBlind" value="0" /></td>
+					<td>
+						Display grids optimized for colorblind users<br />
+						<em>(Uses shades of gray for grid status indicators)</em>
+					</td>
+				</tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr>
+					<td><input type="checkbox" name="general.theme" value="0" /></td>
+					<td>
+						Disable themes completely.<br />
+						<em>(This will disable all the special event based themes).</em>
+						<table>
+							<tr>
+								<tr>
+									<td>&nbsp;</td>
+									<td>
+										Test Theme: <select id="theme_seasonal" name="general.theme.seasonal"><option value="">default</select><br />
+										<em>Changes will not show until the application is restarted.</em>
+									</td>
+								</tr>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="general.theme.simple" value="0" /></td>
+								<td>
+									Allow simple themes only.<br />
+									<em>(Select this if the special themes seem to be slowing your system down).</em>
+								</td>
+							</tr>
+						</table>
+						<em>Note: You will need to restart <span class="app-name"></span> for these changes to take effect.</em>
+					</td>
+				</tr>
+				<tr><td colspan="2">&nbsp;</td></tr>
+				<tr>
+					<td colspan="1">&nbsp;</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		<div class="proxies">
+			<h1>Proxy Settings</h1>
+			<table id="proxies-main">
+				<!-- this one below is called 'general.alwaysUseProxy for historical reasons.
+				     I don't know why we included names like 'general' in there anyway ... -->
+				<tr>
+					<td width="60" align="right" valign="center"><input type="checkbox" name="general.alwaysUseProxy" value="1" /></td>
+					<td valign="center">
+						Use built-in proxy servers<br />
+						<em>(Reduces possibility of being temporarily blocked by Google)</em>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><input type="checkbox" id="proxies_use" name="proxies.use" value="1" /></td>
+					<td valign="center">Use custom HTTP proxies</td>
+				</tr>
+				<tr>
+					<td align="right">When a<br />proxy fails:</td>
+					<td valign="center"><select id="proxies_contingency" name="proxies.contingency">
+						<option value="error">Inform me of the failing proxy</option>
+						<option value="remove">Remove it and retry with a different one</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td align="right">Proxies:</td>
+					<td>
+						<select id="proxies_list" class="no-save" size="6" style="width: 300px;">
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<table width="100%">
+							<tr>
+								<td>
+									<button id="proxies_import">Import</button>
+									<button id="proxies_clear">Clear</button>
+								</td>
+								<td align="right">
+									<button id="proxies_remove">Remove</button>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">Host:</td>
+					<td><input type="text" class="no-save" id="proxies_host" value="" /> Port: <input type="text" class="no-save" id="proxies_port" value="" size="4" /></td>
+				</tr>
+				<tr>
+					<td align="right" valign="center"><input id="proxies_auth" type="checkbox" class="no-save" /></td>
+					<td>Authentication required</td>
+				</tr>
+				<tr>
+					<td align="right">Username:</td>
+					<td><input type="text" id="proxies_user" class="no-save" value="" /></td>
+				</tr>
+				<tr>
+					<td align="right">Password:</td>
+					<td><input type="password" id="proxies_pass" class="no-save" value="" /></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><button id="proxies_add">Add</button></td>
+				</tr>
+			</table>
+			<table id="proxies-import" style="display: none;">
+				<tr>
+					<td width="80" align="right">Proxy list:</td>
+					<td>
+						<textarea id="proxies_import_list" class="no-save" cols="40" rows="7">
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<button id="proxies_import_import">Import</button>
+						<button id="proxies_import_cancel">Cancel</button>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>Specify proxy hosts and ports, one per line, separated by a colon (e.g. myproxy.com:8080).
+						If your proxy requires authentication, use the form user:pass@host:port (e.g. joe:S3crets@myproxy.com:8080).</td>
+				</tr>
+			</table>
+		</div>
+		<div class="accounts no-save">
+			<h1>Account Management</h1>
+			<div id="account-management-accounts"></div>
+		</div>
+		<!--
+		<div class="semrush">
+			<table style="padding: 10px 0 10px 0;">
+				<tr>
+					<td><img src="app:/img/semrush-logo.png"/></td>
+					<td style="vertical-align: middle"><h1 style="margin: 0">SEMRush Settings</h1></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" id="semrush.email" name="semrush.email" size="35" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" id="semrush.password"  name="semrush.password" size="35" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button class="semrush-get-key">Retrieve your API key</button><br/><br/></td>
+				</tr>
+				<tr>
+					<td>API Key:</td>
+					<td><input type="text" id="semrush.apikey" name="semrush.apikey" size="35" /></td>
+				</tr>
+			</table>
+			<div class="semrush-description">
+				<h3>What is SEMRush?</h3>
+				<p>
+					SEMRush is a keyword service that allows you to gather and
+					analyze the main keywords that your competitors rank for.
+				</p>
+				<p>
+					To access these features, you will need access to the SEMRush API - a feature available to paid SEMRush users.
+				</p>
+				<p>
+					<a href="http://semrush.com/?ref=957186023" class="external" style="text-decoration: underline">
+						To find out more, or to sign up for an account, click here.
+					</a>
+				</p>
+			</div>
+		</div>
+		-->
+		<div class="update">
+			<h1>Updates</h1>
+			<table>
+				<tr>
+					<td width="80" align="right">Dev Release:</td>
+					<td>
+						<select id="update_devrelease" name="update.devrelease">
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="right" valign="center"><input type="checkbox" name="update.check" value="1" /></td>
+					<td valign="center">Always check for updates on startup</td>
+				</tr>
+				<tr>
+					<td height="20"></td>
+				</tr>
+				<tr>
+					<td width="80"></td>
+					<td><button id="update_now">Check For Update</button></td>
+				</tr>
+			</table>
+		</div>
+		<div class="debug">
+			<h1>Debugging</h1>
+			<!--
+			<p>Click here to upload your activity log file to <span class="app-name"></span>.<br />
+			<em>(Note: Use this when submitting a bug report, or when prompted to by Noble Samurai Support staff.)</em></p>
+			<button id="upload-activity-log">Upload Activity Log</button>
+			<br />
+			<br />
+			-->
+			<table>
+				<tr>
+					<td><input type="checkbox" name="debug.enabled" value="1" /></td>
+					<td>
+						<p>Log Extended Debugging Information<br />
+						<em>This option tells <span class="app-name"></span> to store indepth log files
+							of your activity, and <span class="app-name"></span>'s internal processes.</em></p>
+						<button id="upload-debug-log">Upload Extended Debugging Information</button>
+					</td>
+				</tr>
+			</table>
+			<br />
+		</div>
+		<div class="dev">
+			<h1>Developer</h1>
+			<table>
+				<tr>
+					<td align="right" valign="center"><input type="checkbox" name="dev.cloud.staging" value="1" /></td>
+					<td valign="center">Use cloud staging services</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Staging Prefix: <input type="text" name="dev.cloud.stagingPrefix" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">Geschichte URL: <input type="text" name="dev.cloud.geschichteURL" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button id="intentionally-cause-error">Intentionally cause an error</button> (For testing purposes)
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="footer">
+		<button class="save">Save</button>
+		<button class="close">Cancel</button>
+	</div>
+</div>
+
+</body>
+
+</html>

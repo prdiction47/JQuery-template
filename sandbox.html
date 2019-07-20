@@ -1,0 +1,108 @@
+<!--
+ LEGAL COPYRIGHT NOTICE
+ 
+ Copyright (c) Noble Samurai Pty Ltd, 2008-2011.  All Rights Reserved.  
+ 
+ This software is proprietary to and embodies the confidential technology of
+ Noble Samurai Pty Ltd.  Possession, use, dissemination or copying of this
+ software and media is authorised only pursuant to a valid written license
+ from Noble Samurai Pty Ltd.  Questions or requests regarding permission may
+ be sent by email to legal@noblesamurai.com or by post to PO Box 477,
+ Blackburn Victoria 3130, Australia.
+-->
+<html>
+	<head>
+		<title>My Sandbox</title>
+		<script type="text/javascript">
+		
+		function kpMonthlyPopularity(pctOfMax) {
+			this.pctOfMax=pctOfMax;
+		}
+				
+		var kpView = {
+			removeMatchType: function(keyword) {
+				return keyword.charAt(0)=='"'||keyword.charAt(0)=="["?keyword.substr(1,keyword.length-2):keyword
+			},
+			MATCH_BROAD: 0,
+			MATCH_PHRASE: 1,
+			MATCH_EXACT: 2,
+			MATCH_NEGATIVE: 3
+		};
+		
+		var kpKeywordShoppingCart = {
+			keywordToLabel: function(keyword) {
+				var spaceRe=/(%20)/g,
+					apostropheRe=/\'/g,
+					quoteRe=/\"/g,
+					leftBracketRe=/\[/g,
+					rightBracketRe=/\]/g,
+					label=encodeURIComponent(keyword);
+					
+				label=label.replace(spaceRe,"+");
+							label=label.replace(apostropheRe,"%27");
+							label=label.replace(quoteRe,"%22");
+							label=label.replace(leftBracketRe,"%5B");
+							label=label.replace(rightBracketRe,"%5D");
+				return label
+			}
+		};
+		
+		function kpCriterion(rawKeyword, relevance, popularity, 
+		                     avgPopularity, lastMonthsCounts, avgCounts, competition, cpc, 
+		                     numericCpc, position, numericPosition, inAdGroup, inCampaign, 
+		                     monthlyPopularity, maxPopularityMonth, negative, matchType, isTradeMark) {
+			this.keyword=rawKeyword;
+			this.rawKeyword=kpView.removeMatchType(rawKeyword);
+			this.relevance=Math.abs(relevance);
+			this.label=kpKeywordShoppingCart.keywordToLabel(this.keyword);
+			this.popularity=popularity;
+			this.avgPopularity=avgPopularity;
+			this.lastMonthsCounts=lastMonthsCounts;
+			this.avgCounts=avgCounts;
+			this.competition=competition;
+			this.cpc=cpc;
+			this.numericCpc=numericCpc;
+			this.position=position;
+			this.numericPosition=numericPosition;
+			this.inAdGroup=inAdGroup;
+			this.inCampaign=inCampaign;
+			this.monthlyPopularity=monthlyPopularity;
+			this.maxPopularityMonth=maxPopularityMonth;
+			this.matchType=matchType;
+			this.negative=negative;
+			this.negativeLabel=kpKeywordShoppingCart.keywordToLabel(negative);
+			this.inShoppingCart=0;
+			this.negativeInShoppingCart=0;
+			this.isTradeMark=isTradeMark;
+		}
+		
+		function kpCriteriaGroup(name, title, collapsed,criteria, numBroadNotInAdGroup, 
+		                         numPhraseNotInAdGroup, numExactNotInAdGroup, addAllTextBroad, 
+		                         addAllTextPhrase,addAllTextExact) {		                         	
+			this.name=name;
+			this.title=title;
+			this.collapsed=collapsed;
+			this.criteria=criteria;
+			this.numKeywordsNotInAdGroup=[];
+			this.numKeywordsNotInAdGroup[kpView.MATCH_BROAD]=numBroadNotInAdGroup;
+			this.numKeywordsNotInAdGroup[kpView.MATCH_PHRASE]=numPhraseNotInAdGroup;
+			this.numKeywordsNotInAdGroup[kpView.MATCH_EXACT]=numExactNotInAdGroup;
+			this.addAllText={};
+			this.addAllText[kpView.MATCH_BROAD]=addAllTextBroad;
+			this.addAllText[kpView.MATCH_PHRASE]=addAllTextPhrase;
+			this.addAllText[kpView.MATCH_EXACT]=addAllTextExact;
+			this.id=null;
+			this.index=null;
+		}	
+
+		// used to ensure `this' is set correctly when eval is called,
+		// otherwise webkit will complain
+		function evalPassthrough(x) {
+			return window.eval(x);
+		}
+		</script>
+	</head>
+	<body onload="window.childSandboxBridge = {'eval': evalPassthrough};">
+		<b>Blah</b>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+.tip {
+	border: 1px solid #999;
+	z-index: 40002;
+	max-width: 200px;
+	background: #ffffe8;
+	color: #333;
+	padding: 2px 5px;
+}
+.tip .error {
+	color: red;
+	font-weight: bold;
+}

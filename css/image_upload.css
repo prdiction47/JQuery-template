@@ -1,0 +1,19 @@
+
+.imageUpload > form > div {
+	clear: both;
+}
+
+.imageUpload > form > div > div.method {
+	width: 25px;
+	float: left;
+}
+
+.imageUpload > form > div > div.methodInfo {
+	margin-left: 25px;
+}
+
+.imageUpload .wordpress-direct label {
+	width: 80px;
+	text-align: right;
+	display: inline-block;
+}
